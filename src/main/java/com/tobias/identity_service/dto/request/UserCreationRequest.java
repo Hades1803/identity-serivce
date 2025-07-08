@@ -1,9 +1,14 @@
 package com.tobias.identity_service.dto.request;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class UserCreationRequest {
+
+    @Size(min=6,message = "Username must have 6 character")
     private String username;
+    @Size(min=4,message = "Password must have 4 character")
     private String password;
     private String firstName;
     private String lastName;
